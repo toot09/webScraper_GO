@@ -1,0 +1,79 @@
+// 대문자로 function을 만들면 다른 프로젝트에서 export 가능
+//fmt.Print("안녕하세요")
+
+//constance(상수) : constance는 변경 불가능
+const name_c string = "jaewon"
+fmt.Println(name_c)
+
+//variable(변수) : variable은 변경 가능 
+//축약형 :=로 선언가능 ,type 자동매칭 가능 (function 안에서만 가능)
+//var name_v string = "jaewon"
+name_v := "ayoung"
+fmt.Println(name_v)
+chk := false
+
+// function 리턴 타입도 선언해야하며, 리턴 variable 선언도 할수있음(naked return)
+func lenAndUpperName(name string) (length int, uppercase string){
+  return
+}
+
+// 반복문(Loop) For문
+// int에 대한 range는 index와 값 두개를 리턴한다.
+for index,number := range numbers {
+    fmt.Println(index,number)
+  }
+
+// if문
+//variable expression
+if koreanAge := age+2 ;koreanAge < 16 {
+  return false
+}
+
+//switch문
+//variable expression
+switch koreanAge := age + 2 ; koreanAge{
+  case 18:
+    return false
+  case 20:
+    return true
+}
+return false
+
+// 포인터
+//&variable = memory address
+fmt.Println(&a,&b)
+//*memory address = variable (like Pointer)
+fmt.Println(a,*b)
+
+// Array 
+names := [5]string{"jaewon","ayoung"}
+fmt.Println(names)
+
+// Slice (Array 크기 미지정한 형식)
+lst := []int{}
+// append funtion은 slice를 수정해주지 않는다. 단순 리턴값이므로 지정해줘야함
+lst = append(lst,10)
+fmt.Println(lst)
+
+// Map
+//map[key type]value type{key:value,...}
+jaewon := map[string]string{"name":"Jaewon","age":"12"}
+fmt.Println(jaewon["name"])
+// for문에서 range는 key, value를 리턴한다.
+for key, value := range jaewon{
+    fmt.Println(key, value)
+  }
+
+// Constructure
+// Constructure 선언
+type person struct{
+  name    string
+  age     int
+  favFood []string
+}
+func main() {
+  favFood := []string{"pizza","chicken"}
+  // Constructure 사용
+  jaewon := person{name:"jawon", age:32, favFood:favFood}
+  fmt.Println(jaewon.name)
+}
